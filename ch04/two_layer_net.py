@@ -77,3 +77,9 @@ class TwoLayerNet:
         grads['b1'] = np.sum(da1, axis=0)
 
         return grads
+
+
+net = TwoLayerNet(input_size=784, hidden_size=100, output_size=10)
+x = np.random.rand(100, 784)
+t = np.random.rand(100, 10)
+grads = net.numerical_gradient(x, t)
